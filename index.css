@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-ivory text-char font-body; margin: 0; }
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:focus-visible { outline: 3px solid #2B2926; outline-offset: 3px; border-radius: 12px; }
+.steel { background: linear-gradient(100deg,#9aa1a5,#e9ecee 30%,#b9bfc3 55%,#f4f5f6 75%,#8f969a); }
+@keyframes steam { 0%{transform:translateY(0) scaleX(1);opacity:0} 30%{opacity:.7} 100%{transform:translateY(-34px) scaleX(1.6);opacity:0} }
+.steam { animation: steam 3.2s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) { .steam { animation: none; opacity: .4; } }
